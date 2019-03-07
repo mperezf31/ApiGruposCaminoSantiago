@@ -1,0 +1,7 @@
+@(nutritionalData: NutritionalData)
+<nutritionalData>
+    <calories>@nutritionalData.getCalories()</calories>
+    <protein>@nutritionalData.getProtein()</protein>
+    <carbohydrates>@nutritionalData.getCarbohydrates()</carbohydrates>
+    <fat>@nutritionalData.getFat()</fat>
+</nutritionalData>

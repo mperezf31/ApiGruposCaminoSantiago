@@ -1,0 +1,10 @@
+title-is-required=The title value is required
+description-is-required=The description value is required
+serves-is-required=The serves number is required
+ingredients-is-required=The ingredients value is required
+categories-is-required=The categories value is required
+steps-is-required=The steps value is required
+name-is-required=The name value is required
+unique-recipe-title=Another recipe with the same title already exists
+error.invalid=Invalid value
+unauthorized=Unauthorized user
