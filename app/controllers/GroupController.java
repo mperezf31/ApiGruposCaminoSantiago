@@ -1,6 +1,6 @@
 package controllers;
 
-import models.Recipe;
+import models.GroupCamino;
 import play.data.FormFactory;
 import play.libs.Json;
 import play.mvc.Controller;
@@ -10,35 +10,25 @@ import play.mvc.Results;
 import javax.inject.Inject;
 import java.util.List;
 
-/**
- * This controller contains an action to handle HTTP requests
- * to the application's home page.
- */
-
-public class RecipeController extends Controller {
+public class GroupController extends Controller {
 
     @Inject
     private FormFactory formFactory;
 
     /**
-     * List all recipes
+     * List all groups
      */
-    public Result listRecipes() {
-        List<Recipe> recipes;
-
-        recipes = Recipe.all();
+    public Result listGroups() {
+        List<GroupCamino> groups = GroupCamino.all();
 
         if (request().accepts("application/json")) {
-            return Results.ok(Json.toJson(recipes));
+            return Results.ok(Json.toJson(groups));
         } else {
             return Results.notAcceptable();
         }
     }
 
-    /**
-     * Show the recipe result in json or xml format, it depends of the content-negotiation
-     */
-    private Result contentNegotiationRecipe(Recipe recipe) {
+    private Result contentNegotiationRecipe(GroupCamino recipe) {
 
         if (request().accepts("application/json")) {
             return Results.ok(Json.toJson(recipe));

@@ -9,31 +9,26 @@ import javax.persistence.ManyToOne;
 import java.sql.Timestamp;
 
 @Entity
-public class Step extends ModelBase {
+public class Post extends ModelBase {
 
-    @Required(message = "description-is-required")
-    private String description;
+    private String content;
 
     @JsonBackReference
     @ManyToOne
-    public Recipe recipe;
+    public GroupCamino groupCamino;
 
-    public Step(String description) {
-        this.description = description;
+    @JsonBackReference
+    @ManyToOne
+    public Pilgrim pilgrim;
+
+    public Post() {
+
     }
 
     @JsonIgnore
     @Override
     public Timestamp getWhenCreated() {
         return super.getWhenCreated();
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
 }
