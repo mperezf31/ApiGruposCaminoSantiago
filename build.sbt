@@ -1,4 +1,4 @@
-name := """recipe-manager"""
+name := """groups-camino-santiago"""
 organization := "com.mperezf"
 
 version := "1.0"
