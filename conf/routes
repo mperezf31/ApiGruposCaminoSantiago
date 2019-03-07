@@ -4,6 +4,9 @@
 
 
 GET     /                              controllers.GroupController.listGroups()
+POST    /user                          controllers.GroupController.createUser()
+POST    /group                         controllers.GroupController.createGroup()
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

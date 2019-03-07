@@ -1,7 +1,10 @@
 package controllers;
 
 import models.GroupCamino;
+import models.Pilgrim;
+import play.data.Form;
 import play.data.FormFactory;
+import play.db.ebean.Transactional;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -14,6 +17,45 @@ public class GroupController extends Controller {
 
     @Inject
     private FormFactory formFactory;
+
+
+    /**
+     * Create new user
+     */
+    @Transactional
+    public Result createUser() {
+
+        Form<Pilgrim> pilgrimForm = formFactory.form(Pilgrim.class).bindFromRequest();
+
+        // Check if the form contains errors
+        if (pilgrimForm.hasErrors()) {
+            return Results.badRequest(Json.toJson(pilgrimForm.errorsAsJson()));
+        }
+
+        Pilgrim pilgrim = pilgrimForm.get();
+        pilgrim.save();
+
+        return contentNegotiationRecipe(pilgrim);
+    }
+
+    /**
+     * Create new group
+     */
+    @Transactional
+    public Result createGroup() {
+
+        Form<Pilgrim> pilgrimForm = formFactory.form(Pilgrim.class).bindFromRequest();
+
+        // Check if the form contains errors
+        if (pilgrimForm.hasErrors()) {
+            return Results.badRequest(Json.toJson(pilgrimForm.errorsAsJson()));
+        }
+
+        Pilgrim pilgrim = pilgrimForm.get();
+        pilgrim.save();
+
+        return contentNegotiationRecipe(pilgrim);
+    }
 
     /**
      * List all groups
@@ -28,10 +70,10 @@ public class GroupController extends Controller {
         }
     }
 
-    private Result contentNegotiationRecipe(GroupCamino recipe) {
+    private Result contentNegotiationRecipe(Object object) {
 
         if (request().accepts("application/json")) {
-            return Results.ok(Json.toJson(recipe));
+            return Results.ok(Json.toJson(object));
         } else {
             return Results.notAcceptable();
         }
