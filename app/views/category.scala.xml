@@ -1,5 +1,0 @@
-@(category: Category)
-<category>
-    <id>@category.getId()</id>
-    <name>@category.getName()</name>
-</category>

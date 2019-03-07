@@ -4,14 +4,6 @@
 
 
 GET     /                              controllers.RecipeController.listRecipes()
-GET     /recipe/:id                    controllers.RecipeController.retrieveRecipe(id: Integer)
-POST    /recipe                        controllers.RecipeController.createRecipe()
-PUT     /recipe/:id                    controllers.RecipeController.updateRecipe(id: Integer)
-DELETE  /recipe/:id                    controllers.RecipeController.deleteRecipe(id: Integer)
-
-#List recipes
-GET     /recipes                       controllers.RecipeController.listRecipes()
-
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

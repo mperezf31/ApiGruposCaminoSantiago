@@ -1,5 +1,0 @@
-@(step: Step)
-<step>
-    <id>@step.getId()</id>
-    <description>@step.getDescription()</description>
-</step>
