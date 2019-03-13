@@ -3,9 +3,14 @@
 # ~~~~
 
 
-GET     /                              controllers.GroupController.listGroups()
+GET     /                              controllers.GroupController.allGroups()
+GET     /groups                        controllers.GroupController.listGroups()
 POST    /user                          controllers.GroupController.createUser()
+POST    /login                         controllers.GroupController.login()
 POST    /group                         controllers.GroupController.createGroup()
+POST    /group/:id/post                controllers.GroupController.createPost(id: Long)
+POST    /group/:id/pilgrim             controllers.GroupController.addGroupMember(id: Long)
+DELETE  /group/:id/pilgrim             controllers.GroupController.deleteGroupMember(id: Long)
 
 
 # Map static resources from the /public folder to the /assets URL path

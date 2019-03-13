@@ -6,7 +6,10 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.ebean.Finder;
 import play.data.validation.Constraints.Required;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -26,12 +29,17 @@ public class Pilgrim extends ModelBase {
 
     private String photo;
 
-    @ManyToMany(mappedBy = "pilgrims")
+    @JsonBackReference
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "founder")
+    private List<GroupCamino> groupsFounder;
+
+    @ManyToMany(mappedBy = "members")
     @JsonBackReference
     private List<GroupCamino> groupsCamino;
 
+    @JsonIgnore
     @JsonManagedReference
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pilgrim")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
     private List<Post> posts;
 
     public String getName() {
@@ -49,6 +57,16 @@ public class Pilgrim extends ModelBase {
 
     public String getPhoto() {
         return photo;
+    }
+
+    @JsonIgnore
+    public List<GroupCamino> getGroupsFounder() {
+        return groupsFounder;
+    }
+
+    @JsonIgnore
+    public List<GroupCamino> getGroupsCamino() {
+        return groupsCamino;
     }
 
     @JsonIgnore
@@ -80,4 +98,21 @@ public class Pilgrim extends ModelBase {
     public void setPosts(List<Post> posts) {
         this.posts = posts;
     }
+
+    public void setGroupsFounder(List<GroupCamino> groupsFounder) {
+        this.groupsFounder = groupsFounder;
+    }
+
+    public static Pilgrim findById(Long id) {
+        return find.query().where().eq("id", id).findOne();
+    }
+
+    public static Pilgrim findByEmail(String email) {
+        return find.query().where().eq("email", email).findOne();
+    }
+
+    public static Pilgrim login(String email, String password) {
+        return find.query().where().eq("email", email).eq("password", password).findOne();
+    }
+
 }

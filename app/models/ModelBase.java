@@ -42,5 +42,6 @@ public class ModelBase extends Model {
     public Timestamp getWhenUpdated() {
         return whenUpdated;
     }
+
 }
 

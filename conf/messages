@@ -8,3 +8,4 @@ name-is-required=The name value is required
 unique-recipe-title=Another recipe with the same title already exists
 error.invalid=Invalid value
 unauthorized=Unauthorized user
+already-exists=This email already exist
