@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.ebean.Finder;
+import play.data.validation.Constraints.Email;
 import play.data.validation.Constraints.Required;
 
 import javax.persistence.CascadeType;
@@ -22,6 +23,7 @@ public class Pilgrim extends ModelBase {
     private String name;
 
     @Required
+    @Email
     private String email;
 
     @Required
