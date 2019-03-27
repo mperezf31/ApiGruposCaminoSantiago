@@ -1,18 +1,86 @@
-2019-03-13 16:16:07,801 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-12 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:16:07,807 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-12 - Creating Pool for datasource 'default'
-2019-03-13 16:16:09,452 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-12 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:16:09,605 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-12 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-03-27 12:11:24,242 [INFO] from play.api.db.DefaultDBApi in pool-8-thread-5 - Database [default] initialized at jdbc:h2:~/archivo.db
+2019-03-27 12:11:24,258 [INFO] from application in pool-8-thread-5 - Creating Pool for datasource 'default'
+2019-03-27 12:11:58,090 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-2 - Database [default] initialized at jdbc:h2:~/archivo.db
+2019-03-27 12:11:58,093 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
+2019-03-27 12:11:59,701 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-2 - 
+
+! @7bbcb4cd9 - Internal server error, for (GET) [/] ->
+ 
+play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
+	at play.api.db.evolutions.ApplicationEvolutions.$anonfun$runEvolutions$1(ApplicationEvolutions.scala:78)
+	at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:100)
+	at play.api.db.evolutions.ApplicationEvolutions.runEvolutions(ApplicationEvolutions.scala:49)
+	at play.api.db.evolutions.ApplicationEvolutions.$anonfun$start$1(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions.$anonfun$start$1$adapted(ApplicationEvolutions.scala:42)
+	at scala.collection.immutable.List.foreach(List.scala:389)
+	at play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:151)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:50)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:49)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:40)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:194)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1085)
+	at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+	at com.google.inject.Guice.createInjector(Guice.java:99)
+	at com.google.inject.Guice.createInjector(Guice.java:84)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:185)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:137)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:174)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:171)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:124)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:241)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:138)
+	at akka.stream.impl.fusing.MapAsyncUnordered$$anon$26.onPush(Ops.scala:1304)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:519)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:482)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:378)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:588)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:472)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:563)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:745)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:760)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:670)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+2019-03-27 12:12:07,162 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
+2019-03-27 12:12:07,491 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-3 - Database [default] initialized at jdbc:h2:~/archivo.db
+2019-03-27 12:12:07,491 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
+2019-03-27 12:12:08,488 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-3 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2019-03-27 12:12:08,639 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-3 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2019-03-13 16:16:09,610 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-12 - Application started (Dev)
-2019-03-13 16:16:10,055 [ERROR] from application in application-akka.actor.default-dispatcher-4 - 
+2019-03-27 12:12:08,645 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-3 - Application started (Dev)
+2019-03-27 12:14:30,741 [ERROR] from application in application-akka.actor.default-dispatcher-2 - 
 
-! @7b7fm6nkg - Internal server error, for (POST) [/uploadFile] ->
+! @7bbcbd25j - Internal server error, for (POST) [/user] ->
  
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ClassCastException: java.io.File cannot be cast to play.api.libs.Files$TemporaryFile]]
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[PersistenceException: io.ebean.DataIntegrityException: Error[Valor demasiado largo para la columna "PHOTO VARCHAR(255)": "'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABQVBMVEX////36NCZXA33fSv3sjmychTm5ubWx7Lgmy3MzMz3eir3ojWVW... (5030)" Value too long for column "PHOTO VARCHAR(255)": "'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABQVBMVEX////36NCZXA33fSv3sjmychTm5ubWx7Lgmy3MzMz3eir3ojWVW... (5030)"; SQL statement: insert into pilgrim (name, email, password, photo, version, when_created, when_updated) values (?,?,?,?,?,?,?) [22001-194]]]]
 	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:251)
 	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:178)
 	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:382)
@@ -31,433 +99,7 @@ play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ClassCast
 	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
 	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: java.lang.ClassCastException: java.io.File cannot be cast to play.api.libs.Files$TemporaryFile
-	at controllers.GroupController.uploadFile(GroupController.java:264)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$18(Routes.scala:293)
-	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:134)
-	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:133)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2$$anon$1.invocation(HandlerInvoker.scala:108)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:88)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:31)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:138)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:654)
-	at scala.util.Success.$anonfun$map$1(Try.scala:251)
-	at scala.util.Success.map(Try.scala:209)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:288)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:29)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:56)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:48)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:368)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:367)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:375)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:29)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:27)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:375)
-	at scala.concurrent.Future.map(Future.scala:288)
-	at scala.concurrent.Future.map$(Future.scala:288)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:375)
-	at scala.concurrent.Future$.apply(Future.scala:654)
-	at play.core.j.JavaAction.apply(JavaAction.scala:138)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:96)
-	at scala.concurrent.Future.$anonfun$flatMap$1(Future.scala:303)
-	... 13 common frames omitted
-2019-03-13 16:16:27,818 [ERROR] from application in application-akka.actor.default-dispatcher-6 - 
-
-! @7b7fm7o1o - Internal server error, for (POST) [/uploadFile] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ClassCastException: java.io.File cannot be cast to play.api.libs.Files$TemporaryFile]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:251)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:178)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:382)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:380)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:413)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:44)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: java.lang.ClassCastException: java.io.File cannot be cast to play.api.libs.Files$TemporaryFile
-	at controllers.GroupController.uploadFile(GroupController.java:264)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$18(Routes.scala:293)
-	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:134)
-	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:133)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2$$anon$1.invocation(HandlerInvoker.scala:108)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:88)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:31)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:138)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:654)
-	at scala.util.Success.$anonfun$map$1(Try.scala:251)
-	at scala.util.Success.map(Try.scala:209)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:288)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:29)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:56)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:48)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:368)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:367)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:375)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:29)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:27)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:375)
-	at scala.concurrent.Future.map(Future.scala:288)
-	at scala.concurrent.Future.map$(Future.scala:288)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:375)
-	at scala.concurrent.Future$.apply(Future.scala:654)
-	at play.core.j.JavaAction.apply(JavaAction.scala:138)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:96)
-	at scala.concurrent.Future.$anonfun$flatMap$1(Future.scala:303)
-	... 13 common frames omitted
-2019-03-13 16:16:50,376 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-8 - Shutting down connection pool.
-2019-03-13 16:16:50,897 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-8 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:16:50,897 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
-2019-03-13 16:16:51,079 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-8 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:16:51,093 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:16:51,093 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev)
-2019-03-13 16:16:51,141 [ERROR] from application in application-akka.actor.default-dispatcher-3 - 
-
-! @7b7fm96ep - Internal server error, for (POST) [/uploadFile] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ClassCastException: java.io.File cannot be cast to play.api.libs.Files$TemporaryFile]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:251)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:178)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:382)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:380)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:413)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:44)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: java.lang.ClassCastException: java.io.File cannot be cast to play.api.libs.Files$TemporaryFile
-	at controllers.GroupController.uploadFile(GroupController.java:264)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$18(Routes.scala:293)
-	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:134)
-	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:133)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2$$anon$1.invocation(HandlerInvoker.scala:108)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:88)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:31)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:138)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:654)
-	at scala.util.Success.$anonfun$map$1(Try.scala:251)
-	at scala.util.Success.map(Try.scala:209)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:288)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:29)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:56)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:48)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:368)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:367)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:375)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:29)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:27)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:375)
-	at scala.concurrent.Future.map(Future.scala:288)
-	at scala.concurrent.Future.map$(Future.scala:288)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:375)
-	at scala.concurrent.Future$.apply(Future.scala:654)
-	at play.core.j.JavaAction.apply(JavaAction.scala:138)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:96)
-	at scala.concurrent.Future.$anonfun$flatMap$1(Future.scala:303)
-	... 13 common frames omitted
-2019-03-13 16:17:11,073 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-13 - Shutting down connection pool.
-2019-03-13 16:17:11,355 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-13 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:17:11,355 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-13 - Creating Pool for datasource 'default'
-2019-03-13 16:17:11,858 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-13 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:17:11,875 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-13 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:17:11,876 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-13 - Application started (Dev)
-2019-03-13 16:17:46,525 [INFO] from application in application-akka.actor.default-dispatcher-11 - Shutting down connection pool.
-2019-03-13 16:17:46,970 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-14 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:17:46,971 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-14 - Creating Pool for datasource 'default'
-2019-03-13 16:17:47,285 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-14 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:17:47,305 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-14 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:17:47,305 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-14 - Application started (Dev)
-2019-03-13 16:17:47,359 [ERROR] from application in application-akka.actor.default-dispatcher-7 - 
-
-! @7b7fmcbj5 - Internal server error, for (POST) [/uploadFile] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ClassCastException: java.io.File cannot be cast to play.api.libs.Files$TemporaryFile]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:251)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:178)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:382)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:380)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:413)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:44)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: java.lang.ClassCastException: java.io.File cannot be cast to play.api.libs.Files$TemporaryFile
-	at controllers.GroupController.uploadFile(GroupController.java:264)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$18(Routes.scala:293)
-	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:134)
-	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:133)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2$$anon$1.invocation(HandlerInvoker.scala:108)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:88)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:31)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:138)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:654)
-	at scala.util.Success.$anonfun$map$1(Try.scala:251)
-	at scala.util.Success.map(Try.scala:209)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:288)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:29)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:56)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:48)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:368)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:367)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:375)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:29)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:27)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:375)
-	at scala.concurrent.Future.map(Future.scala:288)
-	at scala.concurrent.Future.map$(Future.scala:288)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:375)
-	at scala.concurrent.Future$.apply(Future.scala:654)
-	at play.core.j.JavaAction.apply(JavaAction.scala:138)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:96)
-	at scala.concurrent.Future.$anonfun$flatMap$1(Future.scala:303)
-	... 13 common frames omitted
-2019-03-13 16:20:13,748 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-16 - Shutting down connection pool.
-2019-03-13 16:20:14,073 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-16 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:20:14,074 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-16 - Creating Pool for datasource 'default'
-2019-03-13 16:20:14,560 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-16 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:20:14,579 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-16 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:20:14,580 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-16 - Application started (Dev)
-2019-03-13 16:21:13,827 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
-2019-03-13 16:21:14,093 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-17 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:21:14,093 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-17 - Creating Pool for datasource 'default'
-2019-03-13 16:21:14,723 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-17 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:21:14,744 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-17 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:21:14,745 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-17 - Application started (Dev)
-2019-03-13 16:22:25,449 [INFO] from application in application-akka.actor.default-dispatcher-8 - Shutting down connection pool.
-2019-03-13 16:22:25,836 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-18 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:22:25,837 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-18 - Creating Pool for datasource 'default'
-2019-03-13 16:22:26,101 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-18 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:22:26,123 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-18 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:22:26,124 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-18 - Application started (Dev)
-2019-03-13 16:23:14,132 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-12 - Shutting down connection pool.
-2019-03-13 16:23:14,513 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-12 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:23:14,519 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-12 - Creating Pool for datasource 'default'
-2019-03-13 16:23:14,996 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-12 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:23:15,010 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-12 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:23:15,010 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-12 - Application started (Dev)
-2019-03-13 16:27:07,786 [INFO] from application in application-akka.actor.default-dispatcher-7 - Shutting down connection pool.
-2019-03-13 16:27:07,959 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-18 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:27:07,959 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-18 - Creating Pool for datasource 'default'
-2019-03-13 16:27:08,285 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-18 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:27:08,319 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-18 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:27:08,319 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-18 - Application started (Dev)
-2019-03-13 16:29:24,804 [INFO] from application in application-akka.actor.default-dispatcher-13 - Shutting down connection pool.
-2019-03-13 16:29:25,132 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-26 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:29:25,132 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-26 - Creating Pool for datasource 'default'
-2019-03-13 16:29:25,277 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-26 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:29:25,289 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-26 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:29:25,290 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-26 - Application started (Dev)
-2019-03-13 16:31:23,889 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-31 - Shutting down connection pool.
-2019-03-13 16:31:24,080 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-31 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:31:24,082 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-31 - Creating Pool for datasource 'default'
-2019-03-13 16:31:24,394 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-31 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:31:24,411 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-31 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:31:24,411 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-31 - Application started (Dev)
-2019-03-13 16:39:15,141 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
-2019-03-13 16:39:15,362 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-19 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:39:15,362 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-19 - Creating Pool for datasource 'default'
-2019-03-13 16:39:15,813 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-19 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:39:15,825 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-19 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:39:15,825 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-19 - Application started (Dev)
-2019-03-13 16:41:27,208 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
-2019-03-13 16:41:27,383 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-36 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:41:27,384 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-36 - Creating Pool for datasource 'default'
-2019-03-13 16:41:27,714 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-36 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:41:27,725 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-36 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:41:27,725 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-36 - Application started (Dev)
-2019-03-13 16:42:10,317 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
-2019-03-13 16:42:10,680 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-40 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:42:10,680 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-40 - Creating Pool for datasource 'default'
-2019-03-13 16:42:10,822 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-40 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:42:10,841 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-40 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:42:10,841 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-40 - Application started (Dev)
-2019-03-13 16:42:48,458 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-36 - Shutting down connection pool.
-2019-03-13 16:42:48,677 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-36 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:42:48,677 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-36 - Creating Pool for datasource 'default'
-2019-03-13 16:42:48,939 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-36 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:42:49,005 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-36 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:42:49,005 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-36 - Application started (Dev)
-2019-03-13 16:43:47,252 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
-2019-03-13 16:43:47,661 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-38 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:43:47,661 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-38 - Creating Pool for datasource 'default'
-2019-03-13 16:43:47,928 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-38 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:43:47,940 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-38 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:43:47,940 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-38 - Application started (Dev)
-2019-03-13 16:48:08,890 [INFO] from application in application-akka.actor.default-dispatcher-7 - Shutting down connection pool.
-2019-03-13 16:48:09,199 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-41 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:48:09,199 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-41 - Creating Pool for datasource 'default'
-2019-03-13 16:48:09,348 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-41 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:48:09,362 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-41 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:48:09,362 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-41 - Application started (Dev)
-2019-03-13 16:48:42,842 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-43 - Shutting down connection pool.
-2019-03-13 16:48:43,112 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-43 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:48:43,113 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-43 - Creating Pool for datasource 'default'
-2019-03-13 16:48:43,260 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-43 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:48:43,274 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-43 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:48:43,274 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-43 - Application started (Dev)
-2019-03-13 16:49:39,904 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-45 - Shutting down connection pool.
-2019-03-13 16:49:40,082 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-45 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:49:40,082 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-45 - Creating Pool for datasource 'default'
-2019-03-13 16:49:40,324 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-45 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:49:40,336 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-45 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:49:40,336 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-45 - Application started (Dev)
-2019-03-13 16:50:11,980 [ERROR] from application in application-akka.actor.default-dispatcher-2 - 
-
-! @7b7g0j2a9 - Internal server error, for (POST) [/user] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[PersistenceException: java.lang.NullPointerException]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:251)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:178)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:382)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:380)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:413)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:44)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: javax.persistence.PersistenceException: java.lang.NullPointerException
+Caused by: javax.persistence.PersistenceException: io.ebean.DataIntegrityException: Error[Valor demasiado largo para la columna "PHOTO VARCHAR(255)": "'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABQVBMVEX////36NCZXA33fSv3sjmychTm5ubWx7Lgmy3MzMz3eir3ojWVW... (5030)" Value too long for column "PHOTO VARCHAR(255)": "'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABQVBMVEX////36NCZXA33fSv3sjmychTm5ubWx7Lgmy3MzMz3eir3ojWVW... (5030)"; SQL statement: insert into pilgrim (name, email, password, photo, version, when_created, when_updated) values (?,?,?,?,?,?,?) [22001-194]]
 	at io.ebeaninternal.server.core.DefaultServer.executeCall(DefaultServer.java:700)
 	at io.ebeaninternal.server.core.DefaultServer.executeCall(DefaultServer.java:687)
 	at io.ebean.Ebean.executeCall(Ebean.java:1357)
@@ -488,9 +130,23 @@ Caused by: javax.persistence.PersistenceException: java.lang.NullPointerExceptio
 	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:96)
 	at scala.concurrent.Future.$anonfun$flatMap$1(Future.scala:303)
 	... 13 common frames omitted
-Caused by: java.lang.NullPointerException: null
-	at controllers.GroupController.createUser(GroupController.java:36)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$6(Routes.scala:257)
+Caused by: io.ebean.DataIntegrityException: Error[Valor demasiado largo para la columna "PHOTO VARCHAR(255)": "'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABQVBMVEX////36NCZXA33fSv3sjmychTm5ubWx7Lgmy3MzMz3eir3ojWVW... (5030)" Value too long for column "PHOTO VARCHAR(255)": "'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABQVBMVEX////36NCZXA33fSv3sjmychTm5ubWx7Lgmy3MzMz3eir3ojWVW... (5030)"; SQL statement: insert into pilgrim (name, email, password, photo, version, when_created, when_updated) values (?,?,?,?,?,?,?) [22001-194]]
+	at io.ebean.config.dbplatform.SqlCodeTranslator.translate(SqlCodeTranslator.java:48)
+	at io.ebean.config.dbplatform.DatabasePlatform.translate(DatabasePlatform.java:211)
+	at io.ebeaninternal.server.persist.dml.DmlBeanPersister.execute(DmlBeanPersister.java:83)
+	at io.ebeaninternal.server.persist.dml.DmlBeanPersister.insert(DmlBeanPersister.java:49)
+	at io.ebeaninternal.server.core.PersistRequestBean.executeInsert(PersistRequestBean.java:1217)
+	at io.ebeaninternal.server.core.PersistRequestBean.executeNow(PersistRequestBean.java:764)
+	at io.ebeaninternal.server.core.PersistRequestBean.executeNoBatch(PersistRequestBean.java:819)
+	at io.ebeaninternal.server.core.PersistRequestBean.executeOrQueue(PersistRequestBean.java:810)
+	at io.ebeaninternal.server.persist.DefaultPersister.insert(DefaultPersister.java:483)
+	at io.ebeaninternal.server.persist.DefaultPersister.insert(DefaultPersister.java:430)
+	at io.ebeaninternal.server.persist.DefaultPersister.save(DefaultPersister.java:417)
+	at io.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1630)
+	at io.ebeaninternal.server.core.DefaultServer.save(DefaultServer.java:1622)
+	at io.ebean.Model.save(Model.java:190)
+	at controllers.GroupController.createUser(GroupController.java:45)
+	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$6(Routes.scala:238)
 	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:134)
 	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:133)
 	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2$$anon$1.invocation(HandlerInvoker.scala:108)
@@ -499,177 +155,245 @@ Caused by: java.lang.NullPointerException: null
 	at play.db.ebean.TransactionalAction.lambda$call$6(TransactionalAction.java:18)
 	at io.ebeaninternal.server.core.DefaultServer.executeCall(DefaultServer.java:694)
 	... 41 common frames omitted
-2019-03-13 16:50:29,045 [ERROR] from application in application-akka.actor.default-dispatcher-7 - 
+Caused by: org.h2.jdbc.JdbcSQLException: Valor demasiado largo para la columna "PHOTO VARCHAR(255)": "'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABQVBMVEX////36NCZXA33fSv3sjmychTm5ubWx7Lgmy3MzMz3eir3ojWVW... (5030)"
+Value too long for column "PHOTO VARCHAR(255)": "'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABQVBMVEX////36NCZXA33fSv3sjmychTm5ubWx7Lgmy3MzMz3eir3ojWVW... (5030)"; SQL statement:
+insert into pilgrim (name, email, password, photo, version, when_created, when_updated) values (?,?,?,?,?,?,?) [22001-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:335)
+	at org.h2.table.Table.validateConvertUpdateSequence(Table.java:793)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:151)
+	at org.h2.command.dml.Insert.update(Insert.java:114)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:101)
+	at org.h2.command.Command.executeUpdate(Command.java:258)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:160)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:146)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at io.ebeaninternal.server.type.DataBind.executeUpdate(DataBind.java:82)
+	at io.ebeaninternal.server.persist.dml.InsertHandler.execute(InsertHandler.java:118)
+	at io.ebeaninternal.server.persist.dml.DmlBeanPersister.execute(DmlBeanPersister.java:73)
+	... 61 common frames omitted
+2019-03-27 12:26:33,250 [INFO] from play.core.server.AkkaHttpServer in pool-12-thread-4 - Stopping server...
+2019-03-27 12:26:39,192 [INFO] from application in application-akka.actor.default-dispatcher-10 - Shutting down connection pool.
+2019-03-27 12:26:39,706 [INFO] from play.api.db.DefaultDBApi in pool-12-thread-4 - Database [default] initialized at jdbc:h2:~/archivo.db
+2019-03-27 12:26:39,706 [INFO] from application in pool-12-thread-4 - Creating Pool for datasource 'default'
+2019-03-27 12:27:17,478 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-3 - Database [default] initialized at jdbc:h2:~/archivo.db
+2019-03-27 12:27:17,482 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
+2019-03-27 12:27:19,169 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-3 - 
 
-! @7b7g0k1gi - Internal server error, for (POST) [/user] ->
+! @7bbcd4kfa - Internal server error, for (GET) [/] ->
  
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[PersistenceException: java.lang.NullPointerException]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:251)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:178)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:382)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:380)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:413)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:44)
+play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
+	at play.api.db.evolutions.ApplicationEvolutions.$anonfun$runEvolutions$1(ApplicationEvolutions.scala:78)
+	at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:100)
+	at play.api.db.evolutions.ApplicationEvolutions.runEvolutions(ApplicationEvolutions.scala:49)
+	at play.api.db.evolutions.ApplicationEvolutions.$anonfun$start$1(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions.$anonfun$start$1$adapted(ApplicationEvolutions.scala:42)
+	at scala.collection.immutable.List.foreach(List.scala:389)
+	at play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:151)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:50)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:49)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:40)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:194)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1085)
+	at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+	at com.google.inject.Guice.createInjector(Guice.java:99)
+	at com.google.inject.Guice.createInjector(Guice.java:84)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:185)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:137)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:174)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:171)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:124)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:241)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:138)
+	at akka.stream.impl.fusing.MapAsyncUnordered$$anon$26.onPush(Ops.scala:1304)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:519)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:482)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:378)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:588)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:472)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:563)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:745)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:760)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:670)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
 	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
 	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
 	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: javax.persistence.PersistenceException: java.lang.NullPointerException
-	at io.ebeaninternal.server.core.DefaultServer.executeCall(DefaultServer.java:700)
-	at io.ebeaninternal.server.core.DefaultServer.executeCall(DefaultServer.java:687)
-	at io.ebean.Ebean.executeCall(Ebean.java:1357)
-	at play.db.ebean.TransactionalAction.call(TransactionalAction.java:18)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:138)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:654)
-	at scala.util.Success.$anonfun$map$1(Try.scala:251)
-	at scala.util.Success.map(Try.scala:209)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:288)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:29)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:56)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:48)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:368)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:367)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:375)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:29)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:27)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:375)
-	at scala.concurrent.Future.map(Future.scala:288)
-	at scala.concurrent.Future.map$(Future.scala:288)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:375)
-	at scala.concurrent.Future$.apply(Future.scala:654)
-	at play.core.j.JavaAction.apply(JavaAction.scala:138)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:96)
-	at scala.concurrent.Future.$anonfun$flatMap$1(Future.scala:303)
-	... 13 common frames omitted
-Caused by: java.lang.NullPointerException: null
-	at controllers.GroupController.createUser(GroupController.java:36)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$6(Routes.scala:257)
-	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:134)
-	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:133)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2$$anon$1.invocation(HandlerInvoker.scala:108)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:88)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:31)
-	at play.db.ebean.TransactionalAction.lambda$call$6(TransactionalAction.java:18)
-	at io.ebeaninternal.server.core.DefaultServer.executeCall(DefaultServer.java:694)
-	... 41 common frames omitted
-2019-03-13 16:50:44,869 [ERROR] from application in application-akka.actor.default-dispatcher-8 - 
+2019-03-27 12:27:24,423 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
+2019-03-27 12:27:24,715 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-5 - Database [default] initialized at jdbc:h2:~/archivo.db
+2019-03-27 12:27:24,715 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
+2019-03-27 12:27:25,499 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-5 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2019-03-27 12:27:25,680 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-5 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
-! @7b7g0kp17 - Internal server error, for (POST) [/user] ->
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2019-03-27 12:27:25,684 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-5 - Application started (Dev)
+2019-03-27 12:27:52,927 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2019-03-27 12:27:53,189 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-7 - Database [default] initialized at jdbc:h2:~/archivo.db
+2019-03-27 12:27:53,189 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
+2019-03-27 12:27:53,641 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-7 - 
+
+! @7bbcd6jn7 - Internal server error, for (GET) [/] ->
  
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[PersistenceException: java.lang.NullPointerException]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:251)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:178)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:382)
-	at play.core.server.AkkaHttpServer$$anonfun$1.applyOrElse(AkkaHttpServer.scala:380)
-	at scala.concurrent.Future.$anonfun$recoverWith$1(Future.scala:413)
-	at scala.concurrent.impl.Promise.$anonfun$transformWith$1(Promise.scala:37)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at akka.dispatch.BatchingExecutor$AbstractBatch.processBatch(BatchingExecutor.scala:55)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.$anonfun$run$1(BatchingExecutor.scala:91)
-	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:12)
-	at scala.concurrent.BlockContext$.withBlockContext(BlockContext.scala:81)
-	at akka.dispatch.BatchingExecutor$BlockableBatch.run(BatchingExecutor.scala:91)
-	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:40)
-	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(ForkJoinExecutorConfigurator.scala:44)
+play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
+	at play.api.db.evolutions.ApplicationEvolutions.$anonfun$runEvolutions$1(ApplicationEvolutions.scala:78)
+	at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:100)
+	at play.api.db.evolutions.ApplicationEvolutions.runEvolutions(ApplicationEvolutions.scala:49)
+	at play.api.db.evolutions.ApplicationEvolutions.$anonfun$start$1(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions.$anonfun$start$1$adapted(ApplicationEvolutions.scala:42)
+	at scala.collection.immutable.List.foreach(List.scala:389)
+	at play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:151)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:50)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:49)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:40)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:194)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1085)
+	at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+	at com.google.inject.Guice.createInjector(Guice.java:99)
+	at com.google.inject.Guice.createInjector(Guice.java:84)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:185)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:137)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:174)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:171)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:124)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:241)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:138)
+	at akka.stream.impl.fusing.MapAsyncUnordered$$anon$26.onPush(Ops.scala:1304)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:519)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:482)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:378)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:588)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:472)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:563)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:745)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:760)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:670)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
 	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
 	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
 	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: javax.persistence.PersistenceException: java.lang.NullPointerException
-	at io.ebeaninternal.server.core.DefaultServer.executeCall(DefaultServer.java:700)
-	at io.ebeaninternal.server.core.DefaultServer.executeCall(DefaultServer.java:687)
-	at io.ebean.Ebean.executeCall(Ebean.java:1357)
-	at play.db.ebean.TransactionalAction.call(TransactionalAction.java:18)
-	at play.core.j.JavaAction.$anonfun$apply$8(JavaAction.scala:138)
-	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:654)
-	at scala.util.Success.$anonfun$map$1(Try.scala:251)
-	at scala.util.Success.map(Try.scala:209)
-	at scala.concurrent.Future.$anonfun$map$1(Future.scala:288)
-	at scala.concurrent.impl.Promise.liftedTree1$1(Promise.scala:29)
-	at scala.concurrent.impl.Promise.$anonfun$transform$1(Promise.scala:29)
-	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:60)
-	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:56)
-	at play.api.libs.streams.Execution$trampoline$.execute(Execution.scala:70)
-	at play.core.j.HttpExecutionContext.execute(HttpExecutionContext.scala:48)
-	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:68)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete(Promise.scala:368)
-	at scala.concurrent.impl.Promise$KeptPromise$Kept.onComplete$(Promise.scala:367)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.onComplete(Promise.scala:375)
-	at scala.concurrent.impl.Promise.transform(Promise.scala:29)
-	at scala.concurrent.impl.Promise.transform$(Promise.scala:27)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.transform(Promise.scala:375)
-	at scala.concurrent.Future.map(Future.scala:288)
-	at scala.concurrent.Future.map$(Future.scala:288)
-	at scala.concurrent.impl.Promise$KeptPromise$Successful.map(Promise.scala:375)
-	at scala.concurrent.Future$.apply(Future.scala:654)
-	at play.core.j.JavaAction.apply(JavaAction.scala:138)
-	at play.api.mvc.Action.$anonfun$apply$2(Action.scala:96)
-	at scala.concurrent.Future.$anonfun$flatMap$1(Future.scala:303)
-	... 13 common frames omitted
-Caused by: java.lang.NullPointerException: null
-	at controllers.GroupController.createUser(GroupController.java:36)
-	at router.Routes$$anonfun$routes$1.$anonfun$applyOrElse$6(Routes.scala:257)
-	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:134)
-	at play.core.routing.HandlerInvokerFactory$$anon$3.resultCall(HandlerInvoker.scala:133)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2$$anon$1.invocation(HandlerInvoker.scala:108)
-	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:88)
-	at play.http.DefaultActionCreator$1.call(DefaultActionCreator.java:31)
-	at play.db.ebean.TransactionalAction.lambda$call$6(TransactionalAction.java:18)
-	at io.ebeaninternal.server.core.DefaultServer.executeCall(DefaultServer.java:694)
-	... 41 common frames omitted
-2019-03-13 16:51:59,597 [INFO] from application in application-akka.actor.default-dispatcher-21 - Shutting down connection pool.
-2019-03-13 16:51:59,765 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-46 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:51:59,765 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-46 - Creating Pool for datasource 'default'
-2019-03-13 16:52:00,104 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-46 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:52:00,117 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-46 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2019-03-27 12:27:56,980 [INFO] from application in application-akka.actor.default-dispatcher-5 - Shutting down connection pool.
+2019-03-27 12:27:57,162 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-5 - Database [default] initialized at jdbc:h2:~/archivo.db
+2019-03-27 12:27:57,163 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
+2019-03-27 12:27:57,600 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-5 - 
+
+! @7bbcd6pjc - Internal server error, for (POST) [/user] ->
+ 
+play.api.db.evolutions.InvalidDatabaseRevision: Database 'default' needs evolution![An SQL script need to be run on your database.]
+	at play.api.db.evolutions.ApplicationEvolutions.$anonfun$runEvolutions$1(ApplicationEvolutions.scala:78)
+	at play.api.db.evolutions.ApplicationEvolutions.withLock(ApplicationEvolutions.scala:100)
+	at play.api.db.evolutions.ApplicationEvolutions.runEvolutions(ApplicationEvolutions.scala:49)
+	at play.api.db.evolutions.ApplicationEvolutions.$anonfun$start$1(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions.$anonfun$start$1$adapted(ApplicationEvolutions.scala:42)
+	at scala.collection.immutable.List.foreach(List.scala:389)
+	at play.api.db.evolutions.ApplicationEvolutions.start(ApplicationEvolutions.scala:42)
+	at play.api.db.evolutions.ApplicationEvolutions.<init>(ApplicationEvolutions.scala:151)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get$lzycompute(EvolutionsModule.scala:50)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:49)
+	at play.api.db.evolutions.ApplicationEvolutionsProvider.get(EvolutionsModule.scala:40)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:194)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:205)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1085)
+	at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:199)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:180)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:110)
+	at com.google.inject.Guice.createInjector(Guice.java:99)
+	at com.google.inject.Guice.createInjector(Guice.java:84)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:185)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:137)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:174)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:171)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:124)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:241)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:138)
+	at akka.stream.impl.fusing.MapAsyncUnordered$$anon$26.onPush(Ops.scala:1304)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:519)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:482)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:378)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:588)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:472)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:563)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:745)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:760)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:670)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+2019-03-27 12:28:27,998 [INFO] from application in application-akka.actor.default-dispatcher-3 - Shutting down connection pool.
+2019-03-27 12:28:28,163 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-5 - Database [default] initialized at jdbc:h2:~/archivo.db
+2019-03-27 12:28:28,163 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
+2019-03-27 12:28:28,555 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-5 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2019-03-27 12:28:28,572 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-5 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2019-03-13 16:52:00,118 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-46 - Application started (Dev)
-2019-03-13 16:53:08,299 [INFO] from application in application-akka.actor.default-dispatcher-6 - Shutting down connection pool.
-2019-03-13 16:53:08,469 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-47 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:53:08,470 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-47 - Creating Pool for datasource 'default'
-2019-03-13 16:53:08,740 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-47 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:53:08,751 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-47 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:53:08,751 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-47 - Application started (Dev)
-2019-03-13 16:56:17,381 [INFO] from application in application-akka.actor.default-dispatcher-34 - Shutting down connection pool.
-2019-03-13 16:56:17,562 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-45 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 16:56:17,562 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-45 - Creating Pool for datasource 'default'
-2019-03-13 16:56:17,831 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-45 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 16:56:17,848 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-45 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 16:56:17,849 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-45 - Application started (Dev)
-2019-03-13 17:42:34,088 [INFO] from application in application-akka.actor.default-dispatcher-29 - Shutting down connection pool.
-2019-03-13 17:42:34,276 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-52 - Database [default] initialized at jdbc:h2:~/archivo.db
-2019-03-13 17:42:34,276 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-52 - Creating Pool for datasource 'default'
-2019-03-13 17:42:34,605 [WARN] from org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator in play-dev-mode-akka.actor.default-dispatcher-52 - HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
-2019-03-13 17:42:34,671 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-52 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
-
-    play.filters.csrf.CSRFFilter
-    play.filters.headers.SecurityHeadersFilter
-    play.filters.hosts.AllowedHostsFilter
-
-2019-03-13 17:42:34,671 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-52 - Application started (Dev)
+2019-03-27 12:28:28,572 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-5 - Application started (Dev)

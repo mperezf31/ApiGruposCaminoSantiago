@@ -26,15 +26,14 @@ public class GroupCamino extends ModelBase {
 
     private Long arrivalDate;
 
+    @Column(columnDefinition = "TEXT")
     private String photo;
+
+    private String mode;
 
     @JsonManagedReference
     @ManyToOne
     private Pilgrim founder;
-
-    @JsonManagedReference
-    @ManyToOne
-    private Modality modality;
 
     @JsonManagedReference
     @ManyToMany(cascade = CascadeType.ALL)
@@ -75,8 +74,8 @@ public class GroupCamino extends ModelBase {
         return founder;
     }
 
-    public Modality getModality() {
-        return modality;
+    public String getMode() {
+        return mode;
     }
 
     public List<Pilgrim> getMembers() {
@@ -115,8 +114,8 @@ public class GroupCamino extends ModelBase {
         this.founder = founder;
     }
 
-    public void setModality(Modality modality) {
-        this.modality = modality;
+    public void setMode(String mode) {
+        this.mode = mode;
     }
 
     public void setMembers(List<Pilgrim> members) {

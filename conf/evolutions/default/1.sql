@@ -10,9 +10,9 @@ create table group_camino (
   departure_place               varchar(255),
   departure_date                bigint,
   arrival_date                  bigint,
-  photo                         varchar(255),
+  photo                         TEXT,
+  mode                          varchar(255),
   founder_id                    bigint,
-  modality_id                   bigint,
   version                       bigint not null,
   when_created                  timestamp not null,
   when_updated                  timestamp not null,
@@ -25,21 +25,12 @@ create table group_camino_pilgrim (
   constraint pk_group_camino_pilgrim primary key (group_camino_id,pilgrim_id)
 );
 
-create table modality (
-  id                            bigint auto_increment not null,
-  name                          varchar(255),
-  version                       bigint not null,
-  when_created                  timestamp not null,
-  when_updated                  timestamp not null,
-  constraint pk_modality primary key (id)
-);
-
 create table pilgrim (
   id                            bigint auto_increment not null,
   name                          varchar(255),
   email                         varchar(255),
   password                      varchar(255),
-  photo                         varchar(255),
+  photo                         TEXT,
   version                       bigint not null,
   when_created                  timestamp not null,
   when_updated                  timestamp not null,
@@ -60,9 +51,6 @@ create table post (
 create index ix_group_camino_founder_id on group_camino (founder_id);
 alter table group_camino add constraint fk_group_camino_founder_id foreign key (founder_id) references pilgrim (id) on delete restrict on update restrict;
 
-create index ix_group_camino_modality_id on group_camino (modality_id);
-alter table group_camino add constraint fk_group_camino_modality_id foreign key (modality_id) references modality (id) on delete restrict on update restrict;
-
 create index ix_group_camino_pilgrim_group_camino on group_camino_pilgrim (group_camino_id);
 alter table group_camino_pilgrim add constraint fk_group_camino_pilgrim_group_camino foreign key (group_camino_id) references group_camino (id) on delete restrict on update restrict;
 
@@ -81,9 +69,6 @@ alter table post add constraint fk_post_author_id foreign key (author_id) refere
 alter table group_camino drop constraint if exists fk_group_camino_founder_id;
 drop index if exists ix_group_camino_founder_id;
 
-alter table group_camino drop constraint if exists fk_group_camino_modality_id;
-drop index if exists ix_group_camino_modality_id;
-
 alter table group_camino_pilgrim drop constraint if exists fk_group_camino_pilgrim_group_camino;
 drop index if exists ix_group_camino_pilgrim_group_camino;
 
@@ -99,8 +84,6 @@ drop index if exists ix_post_author_id;
 drop table if exists group_camino;
 
 drop table if exists group_camino_pilgrim;
-
-drop table if exists modality;
 
 drop table if exists pilgrim;
 

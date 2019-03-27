@@ -1,6 +1,5 @@
 package controllers;
 
-import com.google.common.io.Files;
 import models.GroupCamino;
 import models.Pilgrim;
 import models.Post;
@@ -16,8 +15,6 @@ import play.mvc.Result;
 import play.mvc.Results;
 
 import javax.inject.Inject;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,9 +42,6 @@ public class GroupController extends Controller {
             String alreadyExist = Http.Context.current().messages().at("already-exists");
             return Results.badRequest(alreadyExist);
         }
-
-        String picture = getImage("photo", "/ApiGruposCaminoSantiago/images/users/");
-        pilgrim.setPhoto(picture);
         pilgrim.save();
 
         return contentNegotiationRecipe(pilgrim);
@@ -97,8 +91,6 @@ public class GroupController extends Controller {
 
         GroupCamino groupCamino = groupCaminoForm.get();
         groupCamino.setFounder(pilgrim);
-        String picture = getImage("photo", "/ApiGruposCaminoSantiago/images/groups/");
-        groupCamino.setPhoto(picture);
         groupCamino.save();
 
         return contentNegotiationRecipe(groupCamino);
@@ -256,10 +248,14 @@ public class GroupController extends Controller {
         }
     }
 
+    /*
+
+     */
 
     /**
      * getImage("photo","/ApiGruposCaminoSantiago/images/users/");
-     */
+     *//*
+
 
     public String getImage(String keyImage, String destination) {
         Http.MultipartFormData<File> body = request().body().asMultipartFormData();
@@ -308,7 +304,7 @@ public class GroupController extends Controller {
             return badRequest("errpr");
         }
     }
-
+*/
     private Result contentNegotiationRecipe(Object object) {
         if (request().accepts("application/json")) {
             return Results.ok(Json.toJson(object));

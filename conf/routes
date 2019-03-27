@@ -12,8 +12,5 @@ POST    /group/:id/post                controllers.GroupController.createPost(id
 POST    /group/:id/pilgrim             controllers.GroupController.addGroupMember(id: Long)
 DELETE  /group/:id/pilgrim             controllers.GroupController.deleteGroupMember(id: Long)
 
-POST    /uploadFile                    controllers.GroupController.uploadFile()
-
-
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

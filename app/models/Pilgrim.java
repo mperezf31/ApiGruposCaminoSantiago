@@ -9,6 +9,7 @@ import play.data.validation.Constraints.Required;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.Column;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import java.sql.Timestamp;
@@ -29,6 +30,7 @@ public class Pilgrim extends ModelBase {
     @Required
     private String password;
 
+    @Column(columnDefinition = "TEXT")
     private String photo;
 
     @JsonBackReference
