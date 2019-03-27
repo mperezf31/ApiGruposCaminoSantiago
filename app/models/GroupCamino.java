@@ -24,6 +24,10 @@ public class GroupCamino extends ModelBase {
     @Required
     private Long departureDate;
 
+    private Double latitude;
+
+    private Double longitude;
+
     private Long arrivalDate;
 
     @Column(columnDefinition = "TEXT")
@@ -62,6 +66,14 @@ public class GroupCamino extends ModelBase {
         return departureDate;
     }
 
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
     public Long getArrivalDate() {
         return arrivalDate;
     }
@@ -96,6 +108,14 @@ public class GroupCamino extends ModelBase {
 
     public void setDeparturePlace(String departurePlace) {
         this.departurePlace = departurePlace;
+    }
+
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
     }
 
     public void setDepartureDate(Long departureDate) {

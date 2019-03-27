@@ -3,8 +3,9 @@ package controllers;
 import models.GroupCamino;
 import models.Pilgrim;
 import models.Post;
-import models.requests.Groups;
-import models.requests.UserLogin;
+import models.responses.Group;
+import models.responses.Groups;
+import models.responses.UserLogin;
 import play.data.Form;
 import play.data.FormFactory;
 import play.db.ebean.Transactional;
@@ -94,6 +95,28 @@ public class GroupController extends Controller {
         groupCamino.save();
 
         return contentNegotiationRecipe(groupCamino);
+    }
+
+
+    /**
+     * Delete group
+     */
+    @Transactional
+    public Result deleteGroup(Long groupId) {
+
+        Pilgrim pilgrim = Pilgrim.findById(getUserAutenticated());
+        if (pilgrim == null) {
+            String unauthorizedMsg = Http.Context.current().messages().at("unauthorized");
+            return Results.forbidden(unauthorizedMsg);
+        }
+
+        GroupCamino groupCamino = GroupCamino.findById(groupId);
+        if (groupCamino == null) {
+            return Results.notFound();
+        }
+        groupCamino.delete();
+
+        return Results.ok();
     }
 
     /**
@@ -237,12 +260,25 @@ public class GroupController extends Controller {
         return false;
     }
 
+
+    /**
+     * Get group
+     */
+    public Result getGroup(Long id) {
+        GroupCamino groupCamino = GroupCamino.findById(id);
+        if (groupCamino == null) {
+            return Results.notFound();
+        }
+
+        return contentNegotiationRecipe(groupCamino);
+    }
+
     /**
      * List all groups
      */
     public Result allGroups() {
         if (request().accepts("application/json")) {
-            return Results.ok(Json.toJson(GroupCamino.all()));
+            return Results.ok(Json.toJson(Group.mapToGroupList(GroupCamino.all())));
         } else {
             return Results.notAcceptable();
         }

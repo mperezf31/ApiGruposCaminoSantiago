@@ -9,6 +9,8 @@ create table group_camino (
   description                   varchar(255),
   departure_place               varchar(255),
   departure_date                bigint,
+  latitude                      double,
+  longitude                     double,
   arrival_date                  bigint,
   photo                         TEXT,
   mode                          varchar(255),

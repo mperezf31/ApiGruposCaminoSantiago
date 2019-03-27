@@ -1,4 +1,4 @@
-package models.requests;
+package models.responses;
 
 import models.ModelBase;
 import play.data.validation.Constraints.Required;
