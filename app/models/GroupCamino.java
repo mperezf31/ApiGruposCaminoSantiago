@@ -16,6 +16,7 @@ public class GroupCamino extends ModelBase {
     private String title;
 
     @Required
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     @Required

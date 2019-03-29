@@ -6,7 +6,7 @@
 create table group_camino (
   id                            bigint auto_increment not null,
   title                         varchar(255),
-  description                   varchar(255),
+  description                   TEXT,
   departure_place               varchar(255),
   departure_date                bigint,
   latitude                      double,

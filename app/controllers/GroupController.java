@@ -120,6 +120,27 @@ public class GroupController extends Controller {
     }
 
     /**
+     * Delete post
+     */
+    @Transactional
+    public Result deletePost(Long postId) {
+
+        Pilgrim pilgrim = Pilgrim.findById(getUserAutenticated());
+        if (pilgrim == null) {
+            String unauthorizedMsg = Http.Context.current().messages().at("unauthorized");
+            return Results.forbidden(unauthorizedMsg);
+        }
+
+        Post postToDelete = Post.findById(postId);
+        if (postToDelete == null) {
+            return Results.notFound();
+        }
+        postToDelete.delete();
+
+        return Results.ok();
+    }
+
+    /**
      * Create new post
      */
     @Transactional
@@ -148,7 +169,7 @@ public class GroupController extends Controller {
         post.setGroupCamino(groupCamino);
         post.save();
 
-        return contentNegotiationRecipe(post);
+        return contentNegotiationRecipe(groupCamino);
     }
 
 
