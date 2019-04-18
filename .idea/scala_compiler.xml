@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ScalaCompilerConfiguration">
     <profile name="sbt 1" modules="apigruposcaminosantiago_9676" />
-    <profile name="sbt 2" modules="groups-camino-santiago,recipe-manager">
+    <profile name="sbt 2" modules="recipe-manager,groups-camino-santiago">
       <option name="deprecationWarnings" value="true" />
       <option name="uncheckedWarnings" value="true" />
       <parameters>

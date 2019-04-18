@@ -228,7 +228,7 @@ public class GroupController extends Controller {
         List<Pilgrim> newMembers = new ArrayList<>();
         List<Pilgrim> members = groupCamino.getMembers();
         for (Pilgrim member : members) {
-            if (member.getId().equals(pilgrim.getId())) {
+            if (!member.getId().equals(pilgrim.getId())) {
                 newMembers.add(member);
             }
         }
